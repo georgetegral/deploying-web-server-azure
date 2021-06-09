@@ -1,0 +1,1 @@
+New-AzPolicyDefinition -Name 'tagging-policy' -DisplayName 'This policy ensures all indexed resources are tagged' -Policy enforceTag.json
