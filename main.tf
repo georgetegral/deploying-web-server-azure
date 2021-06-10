@@ -99,6 +99,14 @@ resource "azurerm_lb_backend_address_pool" "main" {
     tags                = var.environment
 }
 
+resource "azurerm_availability_set" "main" {
+    name                        = "${var.prefix}-aset"
+    location                    = azurerm_resource_group.main.location
+    resource_group_name         = azurerm_resource_group.main.name
+    platform_fault_domain_count = 2
+    tags                = var.environment
+}
+
 resource "azurerm_linux_virtual_machine" "main" {
   name                            = "${var.prefix}-vm"
   resource_group_name             = azurerm_resource_group.main.name
