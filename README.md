@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [Introduction](#Introduction)
-* [Getting started](#Getting-strarted)
+* [Getting Started](#Getting-Started)
 * [Install our dependencies](#Install-our-dependencies)
 * [Deploy a policy](#Deploy-a-policy)
 * [Create and configure our environment variables](#Create-and-configure-our-environment-variables)
@@ -35,21 +35,62 @@ In this project we will follow the following steps:
 
 ## Deploy a policy
 We will deploy a security policy that enforces that all the resources that we deploy have a tag, this is to have a better understanding of what each resource does. The rules of the policy are defined in the ```enforceTag.json``` file. To deploy the policy we write in our command line:
-```
+```bash
 az policy definition create --name tagging-policy --mode indexed --rules enforceTag.json --description "Policy to enforce all indexed resources are tagged"
 ```
 
 When we have done this, we should wait a few minutes and then enter the following command:
-```
+```bash
 az policy assignment list
 ```
 
 If everything went correctly, we should be able to see a json definition of our new policy:
+
 ![Policy assignment](images/az-policy-assignment-list.PNG)
 
 We are ready to continue to the next step.
 
 ## Create and configure our environment variables
+We will need to configure environment variables in our local computer to use the ```server.json``` Packer template.
+We will need 3 variables that we can get from the Azure portal
+
+### Get Subscription ID
+* Login into your azure account.
+* Search "Subscriptions".
+* Select your subscription.
+* Copy the Subscription Id.
+
+### Get Client ID
+* Login into your azure account.
+* Search "Azure Active Directory".
+* Click "App registrations" under the Manage tab.
+* Click the application.
+* Copy the client ID.
+
+#### Get Client Secret
+* Login into your azure account.
+* Search "Azure Active Directory".
+* Click "App registrations" under the Manage tab.
+* Click the application.
+* Click "Certificates & Secrets" under the Manage tab.
+* Create a client secret as you need.
+* Copy the client secret value.
+
+With this 3 variables identified, we can now go to the terminal and export the environment variables with the following commands:
+
+```bash
+export ARM_CLIENT_ID=your_client_id
+export ARM_CLIENT_SECRET=your_client_secret
+export ARM_SUBSCRIPTION_ID=your_suscription_id
+```
+
+Once you have exported this environment variables, use the ```printenv``` command to check that they are properly configured:
+
+```bash
+printenv
+```
+
+We can now proceed with the exercise
 
 ## Deploy the Packer template
 
