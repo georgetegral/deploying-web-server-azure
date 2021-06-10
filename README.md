@@ -240,45 +240,69 @@ While the infrastructure is deploying, we should get an output similar to this:
 
 ```bash
 azurerm_virtual_network.main: Creating...
-azurerm_public_ip.main: Creating...
-azurerm_managed_disk.main: Creating...
 azurerm_availability_set.main: Creating...
+azurerm_public_ip.main: Creating...
+azurerm_managed_disk.main[1]: Creating...
+azurerm_managed_disk.main[0]: Creating...
 azurerm_network_security_group.main: Creating...
 azurerm_availability_set.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/availabilitySets/udacity-aset]
-azurerm_public_ip.main: Creation complete after 2s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/publicIPAddresses/udacity-ip]
+azurerm_managed_disk.main[0]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md-0]
+azurerm_managed_disk.main[1]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md-1]
+azurerm_virtual_network.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network]
+azurerm_subnet.main: Creating...
+azurerm_public_ip.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/publicIPAddresses/udacity-ip]
 azurerm_lb.main: Creating...
+azurerm_network_security_group.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg]
 azurerm_lb.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb]
 azurerm_lb_backend_address_pool.main: Creating...
-azurerm_managed_disk.main: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md]
 azurerm_lb_backend_address_pool.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
-azurerm_virtual_network.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network]
-azurerm_network_security_group.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg]
-azurerm_subnet.main: Creating...
 azurerm_subnet.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network/subnets/udacity-subnet]
-azurerm_network_interface.main[1]: Creating...
 azurerm_network_interface.main[0]: Creating...
-azurerm_network_interface.main[0]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0]
-azurerm_network_interface.main[1]: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1]
+azurerm_network_interface.main[1]: Creating...
+azurerm_network_interface.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0]
+azurerm_network_interface.main[1]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1]
+azurerm_network_interface_backend_address_pool_association.main[0]: Creating...
+azurerm_network_interface_security_group_association.main[1]: Creating...
+azurerm_network_interface_backend_address_pool_association.main[1]: Creating...
+azurerm_network_interface_security_group_association.main[0]: Creating...
 azurerm_linux_virtual_machine.main[0]: Creating...
 azurerm_linux_virtual_machine.main[1]: Creating...
-azurerm_network_interface_backend_address_pool_association.main[1]: Creating...
-azurerm_network_interface_security_group_association.main[1]: Creating...
-azurerm_network_interface_backend_address_pool_association.main[0]: Creating...
-azurerm_network_interface_security_group_association.main[0]: Creating...
+azurerm_network_interface_security_group_association.main[1]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg] 
 azurerm_network_interface_backend_address_pool_association.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0/ipConfigurations/udacity-ipconfig|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
+azurerm_network_interface_backend_address_pool_association.main[1]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1/ipConfigurations/udacity-ipconfig|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
 azurerm_network_interface_security_group_association.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg] 
-azurerm_network_interface_backend_address_pool_association.main[1]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1/ipConfigurations/udacity-ipconfig|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
-azurerm_network_interface_security_group_association.main[1]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg] 
-azurerm_linux_virtual_machine.main[0]: Still creating... [10s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [10s elapsed]
-azurerm_linux_virtual_machine.main[0]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [10s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [20s elapsed]
 azurerm_linux_virtual_machine.main[0]: Still creating... [30s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [30s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [40s elapsed]
 azurerm_linux_virtual_machine.main[0]: Still creating... [40s elapsed]
-azurerm_linux_virtual_machine.main[0]: Creation complete after 46s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0]
-azurerm_linux_virtual_machine.main[1]: Creation complete after 46s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]
+azurerm_linux_virtual_machine.main[1]: Creation complete after 47s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]
+azurerm_linux_virtual_machine.main[0]: Still creating... [50s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [1m0s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [1m10s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [1m20s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [1m30s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [1m40s elapsed]
+azurerm_linux_virtual_machine.main[0]: Creation complete after 1m47s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Creating...
+azurerm_virtual_machine_data_disk_attachment.main[0]: Creating...
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [10s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [10s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [20s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [20s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [30s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [30s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [40s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [40s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [50s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [50s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[1]: Still creating... [1m0s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Still creating... [1m0s elapsed]
+azurerm_virtual_machine_data_disk_attachment.main[0]: Creation complete after 1m1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0/dataDisks/udacity-md-0]   
+azurerm_virtual_machine_data_disk_attachment.main[1]: Creation complete after 1m1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1/dataDisks/udacity-md-1] 
 ```
 
 After we have deployed our infrastructure, we should get a confirmation message from Terraform

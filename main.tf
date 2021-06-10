@@ -119,7 +119,6 @@ resource "azurerm_availability_set" "main" {
     }
 }
 
-
 resource "azurerm_linux_virtual_machine" "main" {
   count                           = var.vm_num
   name                            = "${var.prefix}-vm-${count.index}"
@@ -145,7 +144,8 @@ resource "azurerm_linux_virtual_machine" "main" {
 }
 
 resource "azurerm_managed_disk" "main" {
-  name                 = "${var.prefix}-md"
+  count                = var.vm_num
+  name                 = "${var.prefix}-md-${count.index}"
   location             = azurerm_resource_group.main.location
   resource_group_name  = azurerm_resource_group.main.name
   storage_account_type = "Standard_LRS"
@@ -154,6 +154,14 @@ resource "azurerm_managed_disk" "main" {
   tags = {
     environment = var.environment
   }
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "main" {
+  count              = var.vm_num
+  managed_disk_id    = element(azurerm_managed_disk.main.*.id, count.index)
+  virtual_machine_id = element(azurerm_linux_virtual_machine.main.*.id, count.index)
+  lun                = "0"
+  caching            = "ReadWrite"
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "main" {
