@@ -12,7 +12,9 @@ resource "azurerm_virtual_network" "main" {
     address_space       = ["10.0.0.0/24"]
     location            = azurerm_resource_group.main.location
     resource_group_name = azurerm_resource_group.main.name
-    tags                = var.environment
+    tags = {
+      environment = var.environment
+    }
 
 }
 
@@ -27,7 +29,10 @@ resource "azurerm_network_security_group" "main" {
   name                = "${var.prefix}-nsg"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
-  tags                = var.environment
+
+  tags = {
+    environment = var.environment
+  }
 
   security_rule {
     name                       = "DenyInternetInboundTraffic"
@@ -62,7 +67,9 @@ resource "azurerm_network_interface" "main" {
     name                = "${var.prefix}-nic-${count.index}"
     resource_group_name = azurerm_resource_group.main.name
     location            = azurerm_resource_group.main.location
-    tags                = var.environment
+    tags = {
+      environment = var.environment
+    }
 
     ip_configuration {
         name                          = "${var.prefix}-ipconfig"
@@ -76,14 +83,18 @@ resource "azurerm_public_ip" "main" {
     resource_group_name = azurerm_resource_group.main.name
     location            = azurerm_resource_group.main.location
     allocation_method   = "Static"
-    tags                = var.environment
+    tags = {
+      environment = var.environment
+    }
 }
 
 resource "azurerm_lb" "main" {
     name                = "${var.prefix}-lb"
     location            = azurerm_resource_group.main.location
     resource_group_name = azurerm_resource_group.main.name
-    tags                = var.environment
+    tags = {
+      environment = var.environment
+    }
 
     frontend_ip_configuration {
         name                 = "${var.prefix}-frontendip"
@@ -96,7 +107,6 @@ resource "azurerm_lb_backend_address_pool" "main" {
     name                = "${var.prefix}-bap"
     resource_group_name = azurerm_resource_group.main.name
     loadbalancer_id     = azurerm_lb.main.id
-    tags                = var.environment
 }
 
 resource "azurerm_availability_set" "main" {
@@ -104,30 +114,44 @@ resource "azurerm_availability_set" "main" {
     location                    = azurerm_resource_group.main.location
     resource_group_name         = azurerm_resource_group.main.name
     platform_fault_domain_count = 2
-    tags                = var.environment
+    tags = {
+      environment = var.environment
+    }
 }
 
+
 resource "azurerm_linux_virtual_machine" "main" {
-  name                            = "${var.prefix}-vm"
+  count                           = var.vm_num
+  name                            = "${var.prefix}-vm-${count.index}"
   resource_group_name             = azurerm_resource_group.main.name
   location                        = azurerm_resource_group.main.location
   size                            = "Standard_D2s_v3"
-  admin_username                  = "${var.username}"
-  admin_password                  = "${var.password}"
+  admin_username                  = var.username
+  admin_password                  = var.password
   disable_password_authentication = false
-  network_interface_ids = [
-    azurerm_network_interface.main.id,
-  ]
-
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
+  network_interface_ids           = ["${element(azurerm_network_interface.main.*.id, count.index)}"]
+  availability_set_id             = azurerm_availability_set.main.id
+  source_image_id                 = var.image
+  tags = {
+    environment = var.environment
   }
 
   os_disk {
+    name                 = "${var.prefix}-osdisk-${count.index}"
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
+  }
+
+}
+
+resource "azurerm_managed_disk" "main" {
+  name                 = "${var.prefix}-md"
+  location             = azurerm_resource_group.main.location
+  resource_group_name  = azurerm_resource_group.main.name
+  storage_account_type = "Standard_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = "1"
+  tags = {
+    environment = var.environment
   }
 }
