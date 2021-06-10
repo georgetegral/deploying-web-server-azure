@@ -1,5 +1,0 @@
-az policy definition create --name tagging-policy --mode indexed --rules enforceTag.json --description "Policy to enforce all indexed resources are tagged"
-
-export ARM_CLIENT_ID=fd9c131f-fad7-4eca-9516-d20c00f3e4a8
-export ARM_CLIENT_SECRET=m530D_bpk2HUu.k6s3tFaPG_Xf--LZ5qc-
-export ARM_SUBSCRIPTION_ID=76ecc65a-b866-4328-925f-0cafa9642559
