@@ -1,11 +1,16 @@
 variable "prefix" {
-  description = "The prefix which should be used for all resources in this example"
+  description = "The prefix which should be used for all resources in this example."
   default = "udacity"
 }
 
 variable "environment" {
-    description = "The environment which should be used for all resources in this example"
+    description = "The environment which should be used for all resources in this example."
     default = "udacity"
+}
+
+variable "vm_num"{
+    description = "The number of virtual machines to be deployed in this example."
+    default = "2"
 }
 
 variable "location" {
@@ -14,9 +19,9 @@ variable "location" {
 }
 
 variable "username" {
-    description = "username for the virtual machine"
+    description = "username for the virtual machine."
 }
 
 variable "password" {
-    description = "password for the virtual machine"
+    description = "password for the virtual machine."
 }
