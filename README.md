@@ -116,86 +116,75 @@ azure-arm: output will be in this color.
     azure-arm: Creating Azure Resource Manager (ARM) client ...
 ==> azure-arm: WARNING: Zone resiliency may not be supported in South Central US, checkout the docs at https://docs.microsoft.com/en-us/azure/availability-zones/
 ==> azure-arm: Creating resource group ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
 ==> azure-arm:  -> Location          : 'South Central US'
 ==> azure-arm:  -> Tags              :
 ==> azure-arm:  ->> tag : udacity
 ==> azure-arm: Validating deployment template ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> DeploymentName    : 'pkrdptdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> DeploymentName    : 'pkrdp4g8pdhdj8x'
 ==> azure-arm: Deploying deployment template ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> DeploymentName    : 'pkrdptdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> DeploymentName    : 'pkrdp4g8pdhdj8x'
 ==> azure-arm:
 ==> azure-arm: Getting the VM's IP address ...
-==> azure-arm:  -> ResourceGroupName   : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> PublicIPAddressName : 'pkriptdjwawivpw'
-==> azure-arm:  -> NicName             : 'pkrnitdjwawivpw'
+==> azure-arm:  -> ResourceGroupName   : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> PublicIPAddressName : 'pkrip4g8pdhdj8x'
+==> azure-arm:  -> NicName             : 'pkrni4g8pdhdj8x'
 ==> azure-arm:  -> Network Connection  : 'PublicEndpoint'
-==> azure-arm:  -> IP Address          : '23.98.177.25'
+==> azure-arm:  -> IP Address          : '23.100.120.204'
 ==> azure-arm: Waiting for SSH to become available...
 ==> azure-arm: Connected to SSH!
-==> azure-arm: Provisioning with shell script: C:\Users\jorge\AppData\Local\Temp\packer-shell845834943
+==> azure-arm: Provisioning with shell script: C:\Users\jorge\AppData\Local\Temp\packer-shell779550731
 ==> azure-arm: + echo Hello, World!
 ==> azure-arm: + nohup busybox httpd -f -p 80
 ==> azure-arm: Querying the machine's properties ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> ComputeName       : 'pkrvmtdjwawivpw'
-==> azure-arm:  -> Managed OS Disk   : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Compute/disks/pkrostdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
+==> azure-arm:  -> Managed OS Disk   : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Compute/disks/pkros4g8pdhdj8x'
 ==> azure-arm: Querying the machine's additional disks properties ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> ComputeName       : 'pkrvmtdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
 ==> azure-arm: Powering off machine ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> ComputeName       : 'pkrvmtdjwawivpw'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
 ==> azure-arm: Capturing image ...
-==> azure-arm:  -> Compute ResourceGroupName : 'pkr-Resource-Group-tdjwawivpw'
-==> azure-arm:  -> Compute Name              : 'pkrvmtdjwawivpw'
+==> azure-arm:  -> Compute ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> Compute Name              : 'pkrvm4g8pdhdj8x'
 ==> azure-arm:  -> Compute Location          : 'South Central US'
 ==> azure-arm:  -> Image ResourceGroupName   : 'udacity-rg'
 ==> azure-arm:  -> Image Name                : 'PackerImage'
 ==> azure-arm:  -> Image Location            : 'South Central US'
 ==> azure-arm: 
 ==> azure-arm: Deleting individual resources ...
-==> azure-arm: Adding to deletion queue -> Microsoft.Compute/virtualMachines : 'pkrvmtdjwawivpw'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/networkInterfaces : 'pkrnitdjwawivpw'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/publicIPAddresses : 'pkriptdjwawivpw'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/virtualNetworks : 'pkrvntdjwawivpw'
-==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkriptdjwawivpw'
+==> azure-arm: Adding to deletion queue -> Microsoft.Compute/virtualMachines : 'pkrvm4g8pdhdj8x'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/networkInterfaces : 'pkrni4g8pdhdj8x'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
 ==> azure-arm: Waiting for deletion of all resources...
-==> azure-arm: Attempting deletion -> Microsoft.Compute/virtualMachines : 'pkrvmtdjwawivpw'
-==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvntdjwawivpw'
-==> azure-arm: Attempting deletion -> Microsoft.Network/networkInterfaces : 'pkrnitdjwawivpw'
+==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Compute/virtualMachines : 'pkrvm4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Network/networkInterfaces : 'pkrni4g8pdhdj8x'
 ==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkriptdjwawivpw
-==> azure-arm: Error: network.PublicIPAddressesClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="PublicIPAddressCannotBeDeleted" Message="Public IP address /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/publicIPAddresses/pkriptdjwawivpw can not be deleted since it is still allocated to resource /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/networkInterfaces/pkrnitdjwawivpw/ipConfigurations/ipconfig. In order to delete the public 
+==> azure-arm: Name: pkrvn4g8pdhdj8x
+==> azure-arm: Error: network.VirtualNetworksClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="InUseSubnetCannotBeDeleted" Message="Subnet pkrsn4g8pdhdj8x is in use by /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/networkInterfaces/pkrni4g8pdhdj8x/ipConfigurations/ipconfig and cannot be deleted. In order to delete the subnet, delete all the resources within the subnet. See aka.ms/deletesubnet." Details=[]
+==> azure-arm:
+==> azure-arm: Error deleting resource. Will retry.
+==> azure-arm: Name: pkrip4g8pdhdj8x
+==> azure-arm: Error: network.PublicIPAddressesClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="PublicIPAddressCannotBeDeleted" Message="Public IP address /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/publicIPAddresses/pkrip4g8pdhdj8x can not be deleted since it is still allocated to resource /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/networkInterfaces/pkrni4g8pdhdj8x/ipConfigurations/ipconfig. In order to delete the public 
 IP, disassociate/detach the Public IP address from the resource.  To learn how to do this, see aka.ms/deletepublicip." Details=[]
 ==> azure-arm:
-==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkrvntdjwawivpw
-==> azure-arm: Error: network.VirtualNetworksClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="InUseSubnetCannotBeDeleted" Message="Subnet pkrsntdjwawivpw is in use by /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/networkInterfaces/pkrnitdjwawivpw/ipConfigurations/ipconfig and cannot be deleted. In order to delete the subnet, delete all the resources within the subnet. See aka.ms/deletesubnet." Details=[]
-==> azure-arm:
-==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkriptdjwawivpw'
-==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvntdjwawivpw'
-==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkriptdjwawivpw
-==> azure-arm: Error: network.PublicIPAddressesClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="PublicIPAddressCannotBeDeleted" Message="Public IP address /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/publicIPAddresses/pkriptdjwawivpw can not be deleted since it is still allocated to resource /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/networkInterfaces/pkrnitdjwawivpw/ipConfigurations/ipconfig. In order to delete the public 
-IP, disassociate/detach the Public IP address from the resource.  To learn how to do this, see aka.ms/deletepublicip." Details=[]
-==> azure-arm:
-==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkrvntdjwawivpw
-==> azure-arm: Error: network.VirtualNetworksClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="InUseSubnetCannotBeDeleted" Message="Subnet pkrsntdjwawivpw is in use by /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Network/networkInterfaces/pkrnitdjwawivpw/ipConfigurations/ipconfig and cannot be deleted. In order to delete the subnet, delete all the resources within the subnet. See aka.ms/deletesubnet." Details=[]
-==> azure-arm:
-==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkriptdjwawivpw'
-==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvntdjwawivpw'
-==> azure-arm:  Deleting -> Microsoft.Compute/disks : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-tdjwawivpw/providers/Microsoft.Compute/disks/pkrostdjwawivpw'
-==> azure-arm: Removing the created Deployment object: 'pkrdptdjwawivpw'
+==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
+==> azure-arm:  Deleting -> Microsoft.Compute/disks : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Compute/disks/pkros4g8pdhdj8x'
+==> azure-arm: Removing the created Deployment object: 'pkrdp4g8pdhdj8x'
 ==> azure-arm: 
 ==> azure-arm: Cleanup requested, deleting resource group ...
 ==> azure-arm: Resource group has been deleted.
-Build 'azure-arm' finished after 7 minutes 30 seconds.
+Build 'azure-arm' finished after 9 minutes 22 seconds.
 
-==> Wait completed after 7 minutes 30 seconds
+==> Wait completed after 9 minutes 22 seconds
 
 ==> Builds finished. The artifacts of successful builds are:
 --> azure-arm: Azure.ResourceManagement.VMImage:
@@ -213,6 +202,59 @@ And in the Azure portal we should be able to see the image "PackerImage" in our 
 
 ## Deploy the infrastructure as code with Terraform
 
+The first step is to run the following Terraform command to download all necessary plugins:
+
+```bash
+terraform init
+```
+
+Before we can plan our solution, we have to take into account that we have already created the resource group for our PackerImage, and Terraform does not allow to deploy resources into existing resource groups. 
+
+To fix this we need to import the existing resource group to Terraform so that it knows to deploy our resources there. To do that we have to run the following command:
+
+```bash
+terraform import azurerm_resource_group.main /subscriptions/{subsriptionId}/resourceGroups/{resourceGroupName}
+```
+
+In my specific case it is:
+```bash
+terraform import azurerm_resource_group.main /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg
+```
+
+![Import RG](images/import-rg.PNG)
+
+Once that is done, we can run the following command to plan our solution:
+
+```bash
+terraform plan -out solution.plan
+``` 
+
+To create our infrastructure in Azure we have to run the following command:
+
+```bash
+terraform apply
+```
+
+After we have deployed our infrastructure, we should get a confirmation message from Terraform
+
+![Apply complete bash](images/apply-complete-cmd.PNG)
+
+We can also check if the resources are deployed in the Azure Portal, the result will look something like the following:
+
+![Apply complete portal](images/apply-complete-portal.PNG)
+
+We can also check all the resources that we just deployed in Terraform with the following command:
+
+```bash
+terraform show
+```
+
+Finally, remember to destroy the resources:
+
+```bash
+terraform destroy
+```
+
 ## References
 - [What is Infrastructure as Code?](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
 - [Azure](https://portal.azure.com)
@@ -220,3 +262,4 @@ And in the Azure portal we should be able to see the image "PackerImage" in our 
 - [Packer](https://www.packer.io/downloads)
 - [Terraform](https://www.terraform.io/downloads.html)
 - [How to use Packer to create Linux virtual machine images in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer)
+- [Terraform Azure Documentation](https://learn.hashicorp.com/collections/terraform/azure-get-started)
