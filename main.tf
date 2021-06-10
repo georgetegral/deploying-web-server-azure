@@ -155,3 +155,16 @@ resource "azurerm_managed_disk" "main" {
     environment = var.environment
   }
 }
+
+resource "azurerm_network_interface_backend_address_pool_association" "main" {
+  count                   = var.vm_num
+  network_interface_id    = element(azurerm_network_interface.main.*.id, count.index)
+  ip_configuration_name   = "${var.prefix}-ipconfig"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.main.id
+}
+
+resource "azurerm_network_interface_security_group_association" "main" {
+  count                     = var.vm_num
+  network_interface_id      = element(azurerm_network_interface.main.*.id, count.index)
+  network_security_group_id = azurerm_network_security_group.main.id
+}

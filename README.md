@@ -116,75 +116,74 @@ azure-arm: output will be in this color.
     azure-arm: Creating Azure Resource Manager (ARM) client ...
 ==> azure-arm: WARNING: Zone resiliency may not be supported in South Central US, checkout the docs at https://docs.microsoft.com/en-us/azure/availability-zones/
 ==> azure-arm: Creating resource group ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
 ==> azure-arm:  -> Location          : 'South Central US'
 ==> azure-arm:  -> Tags              :
 ==> azure-arm:  ->> tag : udacity
 ==> azure-arm: Validating deployment template ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> DeploymentName    : 'pkrdp4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> DeploymentName    : 'pkrdpszhuz5shze'
 ==> azure-arm: Deploying deployment template ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> DeploymentName    : 'pkrdp4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> DeploymentName    : 'pkrdpszhuz5shze'
 ==> azure-arm:
 ==> azure-arm: Getting the VM's IP address ...
-==> azure-arm:  -> ResourceGroupName   : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> PublicIPAddressName : 'pkrip4g8pdhdj8x'
-==> azure-arm:  -> NicName             : 'pkrni4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName   : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> PublicIPAddressName : 'pkripszhuz5shze'
+==> azure-arm:  -> NicName             : 'pkrniszhuz5shze'
 ==> azure-arm:  -> Network Connection  : 'PublicEndpoint'
-==> azure-arm:  -> IP Address          : '23.100.120.204'
+==> azure-arm:  -> IP Address          : '104.214.92.154'
 ==> azure-arm: Waiting for SSH to become available...
 ==> azure-arm: Connected to SSH!
-==> azure-arm: Provisioning with shell script: C:\Users\jorge\AppData\Local\Temp\packer-shell779550731
+==> azure-arm: Provisioning with shell script: C:\Users\jorge\AppData\Local\Temp\packer-shell006649467
 ==> azure-arm: + echo Hello, World!
 ==> azure-arm: + nohup busybox httpd -f -p 80
 ==> azure-arm: Querying the machine's properties ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
-==> azure-arm:  -> Managed OS Disk   : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Compute/disks/pkros4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> ComputeName       : 'pkrvmszhuz5shze'
+==> azure-arm:  -> Managed OS Disk   : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-szhuz5shze/providers/Microsoft.Compute/disks/pkrosszhuz5shze'
 ==> azure-arm: Querying the machine's additional disks properties ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> ComputeName       : 'pkrvmszhuz5shze'
 ==> azure-arm: Powering off machine ...
-==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> ComputeName       : 'pkrvm4g8pdhdj8x'
+==> azure-arm:  -> ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> ComputeName       : 'pkrvmszhuz5shze'
 ==> azure-arm: Capturing image ...
-==> azure-arm:  -> Compute ResourceGroupName : 'pkr-Resource-Group-4g8pdhdj8x'
-==> azure-arm:  -> Compute Name              : 'pkrvm4g8pdhdj8x'
+==> azure-arm:  -> Compute ResourceGroupName : 'pkr-Resource-Group-szhuz5shze'
+==> azure-arm:  -> Compute Name              : 'pkrvmszhuz5shze'
 ==> azure-arm:  -> Compute Location          : 'South Central US'
 ==> azure-arm:  -> Image ResourceGroupName   : 'udacity-rg'
 ==> azure-arm:  -> Image Name                : 'PackerImage'
 ==> azure-arm:  -> Image Location            : 'South Central US'
 ==> azure-arm: 
 ==> azure-arm: Deleting individual resources ...
-==> azure-arm: Adding to deletion queue -> Microsoft.Compute/virtualMachines : 'pkrvm4g8pdhdj8x'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/networkInterfaces : 'pkrni4g8pdhdj8x'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
-==> azure-arm: Adding to deletion queue -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
+==> azure-arm: Adding to deletion queue -> Microsoft.Compute/virtualMachines : 'pkrvmszhuz5shze'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/networkInterfaces : 'pkrniszhuz5shze'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/virtualNetworks : 'pkrvnszhuz5shze'
+==> azure-arm: Adding to deletion queue -> Microsoft.Network/publicIPAddresses : 'pkripszhuz5shze'
+==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvnszhuz5shze'
+==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkripszhuz5shze'
 ==> azure-arm: Waiting for deletion of all resources...
-==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
-==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
-==> azure-arm: Attempting deletion -> Microsoft.Compute/virtualMachines : 'pkrvm4g8pdhdj8x'
-==> azure-arm: Attempting deletion -> Microsoft.Network/networkInterfaces : 'pkrni4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Network/networkInterfaces : 'pkrniszhuz5shze'
+==> azure-arm: Attempting deletion -> Microsoft.Compute/virtualMachines : 'pkrvmszhuz5shze'
 ==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkrvn4g8pdhdj8x
-==> azure-arm: Error: network.VirtualNetworksClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="InUseSubnetCannotBeDeleted" Message="Subnet pkrsn4g8pdhdj8x is in use by /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/networkInterfaces/pkrni4g8pdhdj8x/ipConfigurations/ipconfig and cannot be deleted. In order to delete the subnet, delete all the resources within the subnet. See aka.ms/deletesubnet." Details=[]
+==> azure-arm: Name: pkripszhuz5shze
+==> azure-arm: Error: network.PublicIPAddressesClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="PublicIPAddressCannotBeDeleted" Message="Public IP address /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-szhuz5shze/providers/Microsoft.Network/publicIPAddresses/pkripszhuz5shze can not be deleted since it is still allocated to resource /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-szhuz5shze/providers/Microsoft.Network/networkInterfaces/pkrniszhuz5shze/ipConfigurations/ipconfig. In order to delete the public IP, disassociate/detach the Public IP address from the resource.  To learn how to do this, see aka.ms/deletepublicip." Details=[]
 ==> azure-arm:
 ==> azure-arm: Error deleting resource. Will retry.
-==> azure-arm: Name: pkrip4g8pdhdj8x
-==> azure-arm: Error: network.PublicIPAddressesClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="PublicIPAddressCannotBeDeleted" Message="Public IP address /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/publicIPAddresses/pkrip4g8pdhdj8x can not be deleted since it is still allocated to resource /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Network/networkInterfaces/pkrni4g8pdhdj8x/ipConfigurations/ipconfig. In order to delete the public 
-IP, disassociate/detach the Public IP address from the resource.  To learn how to do this, see aka.ms/deletepublicip." Details=[]
+==> azure-arm: Name: pkrvnszhuz5shze
+==> azure-arm: Error: network.VirtualNetworksClient#Delete: Failure sending request: StatusCode=400 -- Original Error: Code="InUseSubnetCannotBeDeleted" Message="Subnet pkrsnszhuz5shze is in use by /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-szhuz5shze/providers/Microsoft.Network/networkInterfaces/pkrniszhuz5shze/ipConfigurations/ipconfig and cannot be deleted. In order to delete the subnet, delete all the resources within the subnet. See aka.ms/deletesubnet." Details=[]
 ==> azure-arm:
-==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvn4g8pdhdj8x'
-==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkrip4g8pdhdj8x'
-==> azure-arm:  Deleting -> Microsoft.Compute/disks : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-4g8pdhdj8x/providers/Microsoft.Compute/disks/pkros4g8pdhdj8x'
-==> azure-arm: Removing the created Deployment object: 'pkrdp4g8pdhdj8x'
+==> azure-arm: Attempting deletion -> Microsoft.Network/publicIPAddresses : 'pkripszhuz5shze'
+==> azure-arm: Attempting deletion -> Microsoft.Network/virtualNetworks : 'pkrvnszhuz5shze'
+==> azure-arm:  Deleting -> Microsoft.Compute/disks : '/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/pkr-Resource-Group-szhuz5shze/providers/Microsoft.Compute/disks/pkrosszhuz5shze'
+==> azure-arm: Removing the created Deployment object: 'pkrdpszhuz5shze'
 ==> azure-arm: 
 ==> azure-arm: Cleanup requested, deleting resource group ...
 ==> azure-arm: Resource group has been deleted.
-Build 'azure-arm' finished after 9 minutes 22 seconds.
+Build 'azure-arm' finished after 5 minutes 19 seconds.
 
-==> Wait completed after 9 minutes 22 seconds
+==> Wait completed after 5 minutes 19 seconds
 
 ==> Builds finished. The artifacts of successful builds are:
 --> azure-arm: Azure.ResourceManagement.VMImage:
@@ -192,7 +191,7 @@ Build 'azure-arm' finished after 9 minutes 22 seconds.
 OSType: Linux
 ManagedImageResourceGroupName: udacity-rg
 ManagedImageName: PackerImage
-ManagedImageId: /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/images/PackerImage
+ManagedImageId: /subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/images/Packages/PackerImage
 ManagedImageLocation: South Central US
 ```
 
@@ -237,41 +236,49 @@ To create our infrastructure in Azure we have to run the following command:
 terraform apply
 ```
 
-While the infrastructure is deploying, we should get output similar to this:
+While the infrastructure is deploying, we should get an output similar to this:
 
 ```bash
 azurerm_virtual_network.main: Creating...
 azurerm_public_ip.main: Creating...
-azurerm_availability_set.main: Creating...
 azurerm_managed_disk.main: Creating...
+azurerm_availability_set.main: Creating...
 azurerm_network_security_group.main: Creating...
 azurerm_availability_set.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/availabilitySets/udacity-aset]
-azurerm_public_ip.main: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/publicIPAddresses/udacity-ip]
+azurerm_public_ip.main: Creation complete after 2s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/publicIPAddresses/udacity-ip]
 azurerm_lb.main: Creating...
-azurerm_lb.main: Creation complete after 0s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb]
+azurerm_lb.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb]
 azurerm_lb_backend_address_pool.main: Creating...
+azurerm_managed_disk.main: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md]
 azurerm_lb_backend_address_pool.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
-azurerm_virtual_network.main: Creation complete after 5s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network]
+azurerm_virtual_network.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network]
+azurerm_network_security_group.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg]
 azurerm_subnet.main: Creating...
-azurerm_managed_disk.main: Creation complete after 9s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md]
 azurerm_subnet.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network/subnets/udacity-subnet]
 azurerm_network_interface.main[1]: Creating...
 azurerm_network_interface.main[0]: Creating...
-azurerm_network_interface.main[1]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1]
-azurerm_network_interface.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0]
+azurerm_network_interface.main[0]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0]
+azurerm_network_interface.main[1]: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1]
 azurerm_linux_virtual_machine.main[0]: Creating...
 azurerm_linux_virtual_machine.main[1]: Creating...
-azurerm_network_security_group.main: Creation complete after 10s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg]
+azurerm_network_interface_backend_address_pool_association.main[1]: Creating...
+azurerm_network_interface_security_group_association.main[1]: Creating...
+azurerm_network_interface_backend_address_pool_association.main[0]: Creating...
+azurerm_network_interface_security_group_association.main[0]: Creating...
+azurerm_network_interface_backend_address_pool_association.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0/ipConfigurations/udacity-ipconfig|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
+azurerm_network_interface_security_group_association.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg] 
+azurerm_network_interface_backend_address_pool_association.main[1]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1/ipConfigurations/udacity-ipconfig|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
+azurerm_network_interface_security_group_association.main[1]: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1|/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg] 
 azurerm_linux_virtual_machine.main[0]: Still creating... [10s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [10s elapsed]
-azurerm_linux_virtual_machine.main[1]: Still creating... [20s elapsed]
 azurerm_linux_virtual_machine.main[0]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.main[1]: Still creating... [20s elapsed]
 azurerm_linux_virtual_machine.main[0]: Still creating... [30s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [30s elapsed]
 azurerm_linux_virtual_machine.main[1]: Still creating... [40s elapsed]
 azurerm_linux_virtual_machine.main[0]: Still creating... [40s elapsed]
-oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]                                                            oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0]
-╷                                                                                                                                    oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]
+azurerm_linux_virtual_machine.main[0]: Creation complete after 46s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0]
+azurerm_linux_virtual_machine.main[1]: Creation complete after 46s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]
 ```
 
 After we have deployed our infrastructure, we should get a confirmation message from Terraform
