@@ -208,6 +208,8 @@ The first step is to run the following Terraform command to download all necessa
 terraform init
 ```
 
+Should you wish to change the number of virtual machines that are deployed, or the resource group prefix, or anything else, feel free to change it in the ```vars.tf``` file. Just change the default value, or remove it and set it when you will deploy it.
+
 Before we can plan our solution, we have to take into account that we have already created the resource group for our PackerImage, and Terraform does not allow to deploy resources into existing resource groups. 
 
 To fix this we need to import the existing resource group to Terraform so that it knows to deploy our resources there. To do that we have to run the following command:
@@ -233,6 +235,43 @@ To create our infrastructure in Azure we have to run the following command:
 
 ```bash
 terraform apply
+```
+
+While the infrastructure is deploying, we should get output similar to this:
+
+```bash
+azurerm_virtual_network.main: Creating...
+azurerm_public_ip.main: Creating...
+azurerm_availability_set.main: Creating...
+azurerm_managed_disk.main: Creating...
+azurerm_network_security_group.main: Creating...
+azurerm_availability_set.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/availabilitySets/udacity-aset]
+azurerm_public_ip.main: Creation complete after 3s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/publicIPAddresses/udacity-ip]
+azurerm_lb.main: Creating...
+azurerm_lb.main: Creation complete after 0s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb]
+azurerm_lb_backend_address_pool.main: Creating...
+azurerm_lb_backend_address_pool.main: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/loadBalancers/udacity-lb/backendAddressPools/udacity-bap]
+azurerm_virtual_network.main: Creation complete after 5s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network]
+azurerm_subnet.main: Creating...
+azurerm_managed_disk.main: Creation complete after 9s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Compute/disks/udacity-md]
+azurerm_subnet.main: Creation complete after 4s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/virtualNetworks/udacity-network/subnets/udacity-subnet]
+azurerm_network_interface.main[1]: Creating...
+azurerm_network_interface.main[0]: Creating...
+azurerm_network_interface.main[1]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-1]
+azurerm_network_interface.main[0]: Creation complete after 1s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkInterfaces/udacity-nic-0]
+azurerm_linux_virtual_machine.main[0]: Creating...
+azurerm_linux_virtual_machine.main[1]: Creating...
+azurerm_network_security_group.main: Creation complete after 10s [id=/subscriptions/76ecc65a-b866-4328-925f-0cafa9642559/resourceGroups/udacity-rg/providers/Microsoft.Network/networkSecurityGroups/udacity-nsg]
+azurerm_linux_virtual_machine.main[0]: Still creating... [10s elapsed]
+azurerm_linux_virtual_machine.main[1]: Still creating... [10s elapsed]
+azurerm_linux_virtual_machine.main[1]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [20s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [30s elapsed]
+azurerm_linux_virtual_machine.main[1]: Still creating... [30s elapsed]
+azurerm_linux_virtual_machine.main[1]: Still creating... [40s elapsed]
+azurerm_linux_virtual_machine.main[0]: Still creating... [40s elapsed]
+oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]                                                            oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-0]
+╷                                                                                                                                    oups/udacity-rg/providers/Microsoft.Compute/virtualMachines/udacity-vm-1]
 ```
 
 After we have deployed our infrastructure, we should get a confirmation message from Terraform
